@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Project2DAM</string>
+    <string name="Bienvenido">Bienvenido de Nuevo!</string>
+    <string name="RegistrateParaSerCliente">Registrate para continuar como Cliente</string>
 </resources>
