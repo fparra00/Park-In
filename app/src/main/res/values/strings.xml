@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Project2DAM</string>
+    <string name="app_name">Park-In</string>
     <string name="Bienvenido">Bienvenido de Nuevo!</string>
     <string name="RegistrateParaSerCliente">Registrate para continuar como Cliente</string>
+    <string name="Nombre">Nombre Completo</string>
+    <string name="correo">Correo Electrónico</string>
+    <string name="pass">Constraseña</string>
+    <string name="confirmPass">Confirmar Contraseña</string>
+    <string name="tlf">Numero de Teléfono</string>
+    <string name="terminos">Aceptar Términos y Condiciones de Uso.</string>
+    <string name="verMas">Haz click aquí para ver más</string>
+    <string name="registrate">REGISTRATE</string>
 </resources>
