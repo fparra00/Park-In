@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "87382517071",
+    "project_id": "park-in-21e79",
+    "storage_bucket": "park-in-21e79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87382517071:android:e88bbdb1f1ef0f4805913a",
+        "android_client_info": {
+          "package_name": "com.example.project2dam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87382517071-dpil99tf34ufdjvkfip6ium6k84d0hqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFmvNMxJU2NVZTsqMNmMK9S4sMncUeJm4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87382517071-dpil99tf34ufdjvkfip6ium6k84d0hqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
