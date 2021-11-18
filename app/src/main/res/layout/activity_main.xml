@@ -55,7 +55,6 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/btn_bordes_redondos_transparente"
             android:text="@string/btnCuentas"
             android:textAllCaps="false"
             android:onClick="noDisponibleAun"
@@ -68,10 +67,9 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/btn_bordes_redondos_fondo_blanco"
             android:text="@string/btnInicia"
             android:textAllCaps="false"
-            android:onClick="noDisponibleAun"
+            android:onClick="iniciaSesion"
 
             android:textColor="@color/textBody" />
 
@@ -82,6 +80,7 @@
             android:layout_marginTop="60dp"
             android:gravity="center"
             android:onClick="noDisponibleAun"
+
             android:text="@string/refCrear"
             android:textColor="@color/white" />
     </LinearLayout>

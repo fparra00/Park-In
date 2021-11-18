@@ -9,7 +9,6 @@ import android.widget.*
 class FirstActivity : AppCompatActivity() {
     private var btnIniciaFace: Button? = null
     private var btnIniciaSesion: Button? = null
-    private var textView: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,7 +16,11 @@ class FirstActivity : AppCompatActivity() {
     }
 
 
-
+    fun iniciaSesion(view: View?){
+       val  btnIniciaSesion: Button =view as Button
+        val cambiarPantalla = Intent(this, LoginActivity::class.java)
+        this.startActivity(cambiarPantalla)
+    }
     fun noDisponibleAun(view: View?) {
         val toast = Toast.makeText(applicationContext, "Función no disponible aún! :(", Toast.LENGTH_SHORT)
         toast.show()

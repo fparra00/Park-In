@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/background_blue"
+    >
+
+    <LinearLayout
+        android:id="@+id/layoutLogin"
+        android:layout_width="290dp"
+        android:layout_height="223dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
+
+        <TextView
+            android:id="@+id/etiqEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txtEmail"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/icon_email"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:textColor="@color/textBody" />
+
+        <TextView
+            android:id="@+id/etiqPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/txtPassword"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/icon_password"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:textColor="@color/textBody" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

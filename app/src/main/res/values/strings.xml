@@ -4,6 +4,8 @@
     <string name="btnCuentas">Inicia Sesion con Facebook</string>
     <string name="btnInicia">Inicia Sesión</string>
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
+    <string name="txtEmail">DIRECCION DE E-MAIL</string>
+    <string name="txtPassword">CONTRASEÑA</string>
 
 
 
