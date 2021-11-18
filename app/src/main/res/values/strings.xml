@@ -10,4 +10,6 @@
     <string name="terminos">Aceptar Términos y Condiciones de Uso.</string>
     <string name="verMas">Haz click aquí para ver más</string>
     <string name="registrate">REGISTRATE</string>
+    <string name="nTelefono">Numero de teléfono</string>
+
 </resources>
