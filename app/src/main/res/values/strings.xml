@@ -4,11 +4,17 @@
     <string name="btnCuentas">Inicia Sesion con Facebook</string>
     <string name="btnInicia">Inicia Sesión</string>
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
-    <!--Pantalla Registro coche-->
-    <string name="modelo">Modelo</string>
-    <string name="año">Año</string>
-    <string name="color">Color</string>
-    <string name="matricula">Matrícula</string>
+    <string name="registrate">REGISTRATE</string>
+    <string name="nombreCompleto">Nombre completo</string>
+    <string name="nombreEmpresa">Nombre empresa</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="telefono">Teléfono</string>
+    <string name="pass">Contraseña</string>
+    <string name="confirmarPass">Confirmar contraseña</string>
+    <string name="terminos">Aceptar Términos y Condiciones de uso</string>
+    <string name="verMas"><u>Haz click aquí para ver más</u></string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="registraEmpresa">Registrate para continuar como Empresa</string>
 
 
 </resources>
