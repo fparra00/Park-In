@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/registraEmpresa"
-        android:textColor="@color/textBody"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -49,7 +49,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -60,18 +61,19 @@
             android:id="@+id/txtNombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:backgroundTint="@color/textBody"
+            android:ems="10"
             android:hint="@string/nombreCompleto"
             android:inputType="textPersonName"
+            android:minHeight="48dp"
             android:textColorHint="@color/textBody" />
 
         <EditText
             android:id="@+id/txtEmpresa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:backgroundTint="@color/textBody"
+            android:ems="10"
             android:hint="@string/nombreEmpresa"
             android:inputType="textPersonName"
             android:textColorHint="@color/textBody" />
@@ -83,7 +85,7 @@
             android:backgroundTint="@color/textBody"
             android:ems="10"
             android:hint="@string/correo"
-            android:inputType="textPersonName"
+            android:inputType="textPersonName|textEmailAddress"
             android:textColorHint="@color/textBody" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -103,8 +105,8 @@
                 android:id="@+id/txtTelefono"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
                 android:backgroundTint="@color/textBody"
+                android:ems="10"
                 android:hint="@string/telefono"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/textBody"
@@ -118,8 +120,8 @@
             android:id="@+id/txtPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:backgroundTint="@color/textBody"
+            android:ems="10"
             android:hint="@string/pass"
             android:inputType="textPassword"
             android:textColorHint="@color/textBody" />
@@ -128,8 +130,8 @@
             android:id="@+id/txtConfirmPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:backgroundTint="@color/textBody"
+            android:ems="10"
             android:hint="@string/confirmarPass"
             android:inputType="textPassword"
             android:textColorHint="@color/textBody" />
