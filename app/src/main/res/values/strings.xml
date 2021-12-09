@@ -5,6 +5,13 @@
     <string name="btnInicia">Inicia Sesión</string>
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
     <string name="registrate">REGISTRATE</string>
+    <!--Pantalla Registro coche-->
+    <string name="registraCoche">Registrate tu coche</string>
+    <string name="modelo">Modelo</string>
+    <string name="año">Año</string>
+    <string name="color">Color</string>
+    <string name="matricula">Matrícula</string>
+    <!--Pantalla Registro -->
     <string name="nombreCompleto">Nombre completo</string>
     <string name="nombreEmpresa">Nombre empresa</string>
     <string name="correo">Correo electrónico</string>
@@ -15,6 +22,7 @@
     <string name="verMas"><u>Haz click aquí para ver más</u></string>
     <string name="bienvenido">Bienvenido</string>
     <string name="registraEmpresa">Registrate para continuar como Empresa</string>
+    <string name="addcoche">Añadir coche</string>
 
 
 </resources>
