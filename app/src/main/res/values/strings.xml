@@ -6,7 +6,7 @@
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
     <string name="registrate">REGISTRATE</string>
     <!--Pantalla Registro coche-->
-    <string name="registraCoche">Registra tu coche</string>
+    <string name="registraCoche"> Registra tu coche </string>
     <string name="modelo">Modelo</string>
     <string name="año">Año</string>
     <string name="color">Color</string>

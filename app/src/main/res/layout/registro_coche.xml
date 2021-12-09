@@ -23,7 +23,7 @@
                 android:id="@+id/logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/txtCoche"
+                app:layout_constraintBottom_toTopOf="@+id/txtRegistraCoche"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
@@ -31,16 +31,16 @@
                 app:srcCompat="@drawable/logo_full_blue_notitle" />
 
             <TextView
-                android:id="@+id/txtCoche"
+                android:id="@+id/txtRegistraCoche"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/registraCoche"
                 android:textColor="@color/textBody"
                 android:textSize="34sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/logo"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/logo"
                 app:layout_constraintTop_toBottomOf="@+id/logo" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -59,9 +59,10 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
+                <EditText
                     android:id="@+id/txtModelo"
                     android:layout_width="0dp"
+                    android:textColor="@color/textBody"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
@@ -73,10 +74,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtColor"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/textBody"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:hint="@string/color"
@@ -87,13 +89,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtMatricula" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtAño"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:hint="@string/año"
+                    android:textColor="@color/textBody"
                     android:textColorHint="@color/textBody"
                     android:textSize="24sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -101,10 +104,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/txtColor" />
 
-                <TextView
+                <EditText
                     android:id="@+id/txtMatricula"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/textBody"
                     android:layout_marginStart="25dp"
                     android:layout_marginEnd="25dp"
                     android:hint="@string/matricula"
@@ -120,13 +124,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="20dp"
                     android:background="@color/main_blue"
+                    android:onClick="noDisponibleAun"
                     android:text="@string/addcoche"
                     android:textColor="@color/textBody"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAño" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
