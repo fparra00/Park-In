@@ -4,7 +4,11 @@
     <string name="btnCuentas">Inicia Sesion con Facebook</string>
     <string name="btnInicia">Inicia Sesión</string>
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
-
+    <!--Pantalla Registro coche-->
+    <string name="modelo">Modelo</string>
+    <string name="año">Año</string>
+    <string name="color">Color</string>
+    <string name="matricula">Matrícula</string>
 
 
 </resources>
