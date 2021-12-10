@@ -22,9 +22,14 @@ class FirstActivity : AppCompatActivity() {
     }
     
 
-    fun noDisponibleAun(view: View?) {
-        val toast = Toast.makeText(applicationContext, "Función no disponible aún! :(", Toast.LENGTH_SHORT)
-        toast.show()
+    fun pantallaLogin(view: View?) {
+        val cambiarPantalla = Intent(this, ActivityLogin::class.java)
+        startActivity(cambiarPantalla)
+    }
+
+    fun pantallaRegistro(view: android.view.View) {
+        val cambiarPantalla = Intent(this, ActivityRegister::class.java)
+        startActivity(cambiarPantalla)
     }
 
 }
