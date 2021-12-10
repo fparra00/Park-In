@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
-    tools:context=".FirstActivity"
+    tools:context=".ActivityLogin"
     android:background="@drawable/background_blue"
     >
 
@@ -105,8 +105,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bordes_redondos_fondo_blanco"
-        android:onClick="noDisponibleAun"
         android:text="@string/btnInicia"
+        android:onClick="pantallaInicio"
         android:textAllCaps="false"
 
         android:textColor="@color/textBody"
