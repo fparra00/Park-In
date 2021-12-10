@@ -69,9 +69,9 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/btn_bordes_redondos_fondo_blanco"
+            android:onClick="noDisponibleAun"
             android:text="@string/btnInicia"
             android:textAllCaps="false"
-            android:onClick="noDisponibleAun"
 
             android:textColor="@color/textBody" />
 

@@ -4,21 +4,19 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.project2dam.fragments.*
-import kotlinx.android.synthetic.main.activity_inicio.*
+import kotlinx.android.synthetic.main.activity_register.*
 
 class ActivityRegister : AppCompatActivity(){
 
     private val clientFragment = ClientFragment()
     private val ownerFragment = OwnerFragment()
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
         replaceFragment(clientFragment)
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
+        top_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.client -> replaceFragment(clientFragment)
                 R.id.owner -> replaceFragment(ownerFragment)
@@ -27,7 +25,6 @@ class ActivityRegister : AppCompatActivity(){
         }
 
     }
-
 
     private fun replaceFragment(fragment: Fragment){
         if (fragment!=null){
