@@ -6,9 +6,12 @@ import androidx.fragment.app.Fragment
 import com.example.project2dam.fragments.CarFragment
 import com.example.project2dam.fragments.MapFragment
 import com.example.project2dam.fragments.SettingsFragment
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import kotlinx.android.synthetic.main.activity_inicio.*
 
-class ActivityInicio : AppCompatActivity() {
+class ActivityInicio : AppCompatActivity(), OnMapReadyCallback {
 
     private val mapFragment = MapFragment()
     private val settingsFragment = SettingsFragment()
@@ -20,6 +23,7 @@ class ActivityInicio : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio)
         replaceFragment(mapFragment)
+
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -41,5 +45,9 @@ class ActivityInicio : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onMapReady(p0: GoogleMap) {
+        TODO("Not yet implemented")
     }
 }
