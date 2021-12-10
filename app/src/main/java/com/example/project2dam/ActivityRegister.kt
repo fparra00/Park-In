@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.project2dam.fragments.*
 import kotlinx.android.synthetic.main.activity_inicio.*
+import kotlinx.android.synthetic.main.activity_register.*
 
 class ActivityRegister : AppCompatActivity(){
 
@@ -18,7 +19,7 @@ class ActivityRegister : AppCompatActivity(){
         setContentView(R.layout.activity_register)
         replaceFragment(clientFragment)
 
-        bottom_navigation.setOnNavigationItemSelectedListener {
+        top_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.client -> replaceFragment(clientFragment)
                 R.id.owner -> replaceFragment(ownerFragment)
