@@ -58,7 +58,7 @@
             android:background="@drawable/btn_bordes_redondos_transparente"
             android:text="@string/btnCuentas"
             android:textAllCaps="false"
-            android:onClick="noDisponibleAun"
+            android:onClick="pantallaLogin"
             />
 
         <Button
@@ -69,7 +69,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
             android:background="@drawable/btn_bordes_redondos_fondo_blanco"
-            android:onClick="noDisponibleAun"
+            android:onClick="pantallaLogin"
             android:text="@string/btnInicia"
             android:textAllCaps="false"
 
@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:gravity="center"
-            android:onClick="noDisponibleAun"
+            android:onClick="pantallaRegistro"
             android:text="@string/refCrear"
             android:textColor="@color/white" />
     </LinearLayout>
