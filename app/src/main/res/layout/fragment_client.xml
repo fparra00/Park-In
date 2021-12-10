@@ -5,7 +5,7 @@
     android:id="@+id/principal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityRegisterClient" >
+    tools:context=".fragments.ClientFragment" >
 
     <LinearLayout
         android:id="@+id/general"
