@@ -28,15 +28,12 @@
             android:name=".ActivityLogin"
             android:exported="true" />
         <activity
+            android:name=".ActivityAddCar"
+            android:exported="true" />
+        <activity
             android:name=".ActivityInicioClient"
             android:exported="true"></activity>
         <activity
-<<<<<<< Updated upstream
-=======
-            android:name=".ActivityInicioClient"
-            android:exported="true"></activity>
-        <activity
->>>>>>> Stashed changes
             android:name=".ActivityInicioOwner"
             android:exported="true"></activity>
         <activity
