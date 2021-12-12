@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.project2dam.ActivityInicio
+import com.example.project2dam.ActivityInicioClient
 import com.example.project2dam.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -37,7 +37,7 @@ class ClientFragment : Fragment() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(txtCorreo.text.toString(), txtPass.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                         saveBdd()
-                        showHome(it.result?.user?.email ?: "", ActivityInicio.ProviderType.BASIC)
+                        showHome(it.result?.user?.email ?: "", ActivityInicioClient.ProviderType.BASIC)
                     } else {
                         showAlert(R.string.errorRegistro)
                     }
@@ -86,7 +86,7 @@ class ClientFragment : Fragment() {
         }
     return true
     }
-    private fun showHome(email:String, provider: ActivityInicio.ProviderType){
+    private fun showHome(email:String, provider: ActivityInicioClient.ProviderType){
 
     }
 }

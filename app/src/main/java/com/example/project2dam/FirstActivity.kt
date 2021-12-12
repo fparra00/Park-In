@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import com.example.project2dam.fragments.CarFragment
 import com.example.project2dam.fragments.MapFragment
 import com.example.project2dam.fragments.SettingsFragment
-import kotlinx.android.synthetic.main.activity_inicio.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class FirstActivity : AppCompatActivity() {

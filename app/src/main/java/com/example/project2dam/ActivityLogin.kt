@@ -24,7 +24,7 @@ class ActivityLogin : AppCompatActivity() {
     }
 
     fun pantallaInicio(view: View?) {
-        val cambiarPantalla = Intent(this, ActivityInicio::class.java)
+        val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
         startActivity(cambiarPantalla)
     }
 
