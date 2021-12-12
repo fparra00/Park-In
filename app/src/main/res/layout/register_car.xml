@@ -67,6 +67,7 @@
 
             <EditText
                 android:id="@+id/txtModelo"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/textBody"
@@ -78,6 +79,7 @@
 
             <EditText
                 android:id="@+id/txtMatricula"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/textBody"
@@ -89,6 +91,7 @@
 
             <EditText
                 android:id="@+id/txtMarca"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/textBody"
@@ -100,6 +103,7 @@
 
             <EditText
                 android:id="@+id/txtColor"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/textBody"
@@ -111,6 +115,7 @@
 
             <EditText
                 android:id="@+id/txtDate"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/textBody"

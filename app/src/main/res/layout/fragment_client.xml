@@ -60,6 +60,7 @@
 
         <EditText
             android:id="@+id/txtModelo"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textBody"
@@ -71,6 +72,7 @@
 
         <EditText
             android:id="@+id/txtCorreo"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textBody"
@@ -105,6 +107,7 @@
 
             <EditText
                 android:id="@+id/txtTelefono"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -118,6 +121,7 @@
 
         <EditText
             android:id="@+id/txtPass"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textBody"
@@ -132,6 +136,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textBody"
+            android:textColor="@color/black"
             android:ems="10"
             android:hint="@string/confirmarPass"
             android:inputType="textPassword"

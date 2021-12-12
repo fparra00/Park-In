@@ -66,6 +66,7 @@
                 android:id="@+id/txtLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_weight="0.4"
                 android:hint="@string/correo"
                 android:ems="10"
@@ -90,6 +91,7 @@
             <EditText
                 android:id="@+id/txtContrasena"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.4"
                 android:ems="10"
