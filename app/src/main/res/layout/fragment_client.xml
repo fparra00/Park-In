@@ -63,6 +63,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textBody"
+            android:textColor="@color/textBody"
+
             android:ems="10"
             android:hint="@string/nombreCompleto"
             android:inputType="textPersonName"
@@ -75,6 +77,8 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/textBody"
             android:ems="10"
+            android:textColor="@color/textBody"
+
             android:hint="@string/correo"
             android:inputType="textPersonName|textEmailAddress"
             android:textColorHint="@color/textBody"
@@ -109,6 +113,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:backgroundTint="@color/textBody"
+                android:textColor="@color/textBody"
+
                 android:hint="@string/telefono"
                 android:inputType="textPersonName"
                 android:textColorHint="@color/textBody"
@@ -123,6 +129,8 @@
             android:backgroundTint="@color/textBody"
             android:ems="10"
             android:hint="@string/pass"
+            android:textColor="@color/textBody"
+
             android:inputType="textPassword"
             android:textColorHint="@color/textBody"
             tools:ignore="TouchTargetSizeCheck" />
@@ -135,6 +143,7 @@
             android:ems="10"
             android:hint="@string/confirmarPass"
             android:inputType="textPassword"
+            android:textColor="@color/textBody"
             android:textColorHint="@color/textBody"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
@@ -143,7 +152,7 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegistrarClient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -178,7 +187,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnRegistrarClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bordes_redondos_azul"

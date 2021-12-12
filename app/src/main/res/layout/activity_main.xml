@@ -62,7 +62,7 @@
             />
 
         <Button
-            android:id="@+id/btnRegistrarCoche"
+            android:id="@+id/btnIniciaSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
@@ -81,9 +81,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:gravity="center"
-            android:onClick="pantallaRegistro"
             android:text="@string/refCrear"
             android:textColor="@color/white"
+
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
