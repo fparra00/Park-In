@@ -19,7 +19,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="AIzaSyC6KvEVnKo0sUoHOUgmzERfZiLWSOeWkzM" />
 
         <activity
             android:name=".ActivityLogin"
@@ -28,6 +28,12 @@
             android:name=".ActivityInicioClient"
             android:exported="true"></activity>
         <activity
+<<<<<<< Updated upstream
+=======
+            android:name=".ActivityInicioClient"
+            android:exported="true"></activity>
+        <activity
+>>>>>>> Stashed changes
             android:name=".ActivityInicioOwner"
             android:exported="true"></activity>
         <activity

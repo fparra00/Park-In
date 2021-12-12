@@ -21,7 +21,11 @@ class ActivityLogin : AppCompatActivity() {
 
     }
 
+<<<<<<< Updated upstream
     public fun pantallaInicio(view: View?) {
+=======
+    fun pantallaInicio(view: View?) {
+>>>>>>> Stashed changes
         val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
         startActivity(cambiarPantalla)
     }
