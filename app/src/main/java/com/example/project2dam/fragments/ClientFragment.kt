@@ -1,6 +1,5 @@
 package com.example.project2dam.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,14 +31,15 @@ class ClientFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //Funcion on click del boton de registro
         btnRegistrarClient.setOnClickListener {
-            if (txtPass.text.isNotEmpty() && txtCorreo.text.isNotEmpty()) {
+            if (compForm()) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(txtCorreo.text.toString(), txtPass.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                         saveBdd()
                         showHome(it.result?.user?.email ?: "", ActivityInicio.ProviderType.BASIC)
                     } else {
-                        showAlert()
+                        showAlert(R.string.errorRegistro)
                     }
                 }
             }
@@ -47,7 +47,7 @@ class ClientFragment : Fragment() {
     }
 
     /*
-    Funcion para crear 
+    Funcion para crear una coleccion en la bdd con un documento por usuario, registrando los campos nombre, telefono, email y contraseña
      */
     private fun saveBdd(){
     db.collection("users").document(txtCorreo.text.toString()).set(
@@ -61,15 +61,31 @@ class ClientFragment : Fragment() {
     /*
     Funcion para lanzar alert en caso de fallo registrando al usuario
      */
-    private fun showAlert(){
+    private fun showAlert(msj: Int){
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error registrando al usuario, por favor, reinicie la app si el problema persiste")
+        builder.setMessage(msj)
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }
 
+    private fun compForm():Boolean{
+        if(txtPass.text.toString() != txtConfirmPass.text.toString()){
+            showAlert(R.string.errorContrasenas)
+            Toast.makeText(context,txtPass.text.toString()+""+txtConfirmPass.text.toString(), Toast.LENGTH_LONG ).show()
+            return false
+        }
+        if(txtModelo.text.isEmpty() || txtCorreo.text.isEmpty() || txtTelefono.text.isEmpty() ||  txtPass.text.isEmpty() || txtConfirmPass.text.isEmpty()){
+            showAlert(R.string.errorCampos)
+            return false
+        }
+        if(!checkBox2.isChecked){
+            showAlert(R.string.errorTerminos)
+            return false
+        }
+    return true
+    }
     private fun showHome(email:String, provider: ActivityInicio.ProviderType){
 
     }
