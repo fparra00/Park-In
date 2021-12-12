@@ -19,13 +19,10 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyC6KvEVnKo0sUoHOUgmzERfZiLWSOeWkzM" />
+            android:value="${MAPS_API_KEY}" />
 
         <activity
             android:name=".ActivityLogin"
-            android:exported="true" />
-        <activity
-            android:name=".ActivityAddCar"
             android:exported="true" />
         <activity
             android:name=".ActivityInicioClient"
