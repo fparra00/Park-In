@@ -14,6 +14,9 @@ class ActivityInicio : AppCompatActivity() {
     private val settingsFragment = SettingsFragment()
     private val carFragment= CarFragment()
 
+    enum class ProviderType{
+        BASIC
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

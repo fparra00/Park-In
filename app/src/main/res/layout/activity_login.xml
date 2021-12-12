@@ -101,7 +101,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnRegistrarCoche"
+        android:id="@+id/btnIniciaSesion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bordes_redondos_fondo_blanco"

@@ -16,6 +16,7 @@ class ActivityRegister : AppCompatActivity(){
         setContentView(R.layout.activity_register)
         replaceFragment(clientFragment)
 
+        //Fragmentos
         top_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.client -> replaceFragment(clientFragment)
@@ -25,7 +26,7 @@ class ActivityRegister : AppCompatActivity(){
         }
 
     }
-
+    //Fragmentos
     private fun replaceFragment(fragment: Fragment){
         if (fragment!=null){
             val transaction= supportFragmentManager.beginTransaction()
