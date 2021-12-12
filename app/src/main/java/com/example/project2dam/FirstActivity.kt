@@ -10,6 +10,7 @@ import com.example.project2dam.fragments.CarFragment
 import com.example.project2dam.fragments.MapFragment
 import com.example.project2dam.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_inicio.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class FirstActivity : AppCompatActivity() {
     private var btnIniciaFace: Button? = null
@@ -19,17 +20,18 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        hrefCrearCuenta.setOnClickListener {
+            val cambiarPantalla = Intent(this, ActivityRegister::class.java)
+            startActivity(cambiarPantalla)
+        }
     }
-    
+
 
     fun pantallaLogin(view: View?) {
         val cambiarPantalla = Intent(this, ActivityLogin::class.java)
         startActivity(cambiarPantalla)
     }
 
-    fun pantallaRegistro(view: android.view.View) {
-        val cambiarPantalla = Intent(this, ActivityRegister::class.java)
-        startActivity(cambiarPantalla)
-    }
 
 }

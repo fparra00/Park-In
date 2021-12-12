@@ -21,7 +21,6 @@ class ActivityLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        setup();
     }
 
     fun pantallaInicio(view: View?) {
@@ -29,41 +28,6 @@ class ActivityLogin : AppCompatActivity() {
         startActivity(cambiarPantalla)
     }
 
-    private fun setup() {
-        btnIniciaSesion.setOnClickListener {
-            if (txtContrasena.text.isNotEmpty() && txtLogin.text.isNotEmpty()) {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(txtLogin.text.toString(), txtContrasena.text.toString()).addOnCompleteListener {
 
-                    Toast.makeText(this,it.toString(), Toast.LENGTH_LONG).show()
-
-                    if(it.isSuccessful){
-
-                        showHome(it.result?.user?.email ?: "", ActivityInicio.ProviderType.BASIC)
-                    } else {
-                        showAlert()
-                    }
-                }
-            }
-        }
-
-    }
-
-    private fun showAlert(){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error autenticando al usuario")
-        builder.setPositiveButton("Aceptar", null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
-
-    private fun showHome(email:String, provider: ActivityInicio.ProviderType){
-        val homeIntent = Intent(this, ActivityInicio::class.java).apply {
-            putExtra("email", txtLogin.text)
-            putExtra("provider",provider.name
-            )
-        }
-        startActivity(homeIntent)
-    }
 
 }
