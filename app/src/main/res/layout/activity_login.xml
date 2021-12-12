@@ -106,7 +106,6 @@
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bordes_redondos_fondo_blanco"
         android:text="@string/btnInicia"
-        android:onClick="pantallaInicio"
         android:textAllCaps="false"
 
         android:textColor="@color/textBody"

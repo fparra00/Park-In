@@ -27,7 +27,7 @@
     <string name="errorContrasenas">Las contraseñas deben de ser iguales, escribelas de nuevo, por favor</string>
     <string name="errorCampos">Debes de rellenar todos los campos para poder registrarte</string>
     <string name="errorTerminos">Debes de aceptar nuestros terminos para poder registrarte!</string>
-
+    <string name="errorInicio">Email o contraseña incorrectos! :(</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
