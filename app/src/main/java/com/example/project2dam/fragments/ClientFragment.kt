@@ -5,17 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< Updated upstream
-=======
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.project2dam.ActivityInicioClient
->>>>>>> Stashed changes
+import com.example.project2dam.ActivityInicio
 import com.example.project2dam.R
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.fragment_client.*
 
 
 class ClientFragment : Fragment() {
 
+
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,8 +28,6 @@ class ClientFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_client, container, false)
     }
 
-<<<<<<< Updated upstream
-=======
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -36,7 +37,7 @@ class ClientFragment : Fragment() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(txtCorreo.text.toString(), txtPass.text.toString()).addOnCompleteListener {
                     if(it.isSuccessful){
                         saveBdd()
-                        showHome(it.result?.user?.email ?: "", ActivityInicioClient.ProviderType.BASIC)
+                        showHome(it.result?.user?.email ?: "", ActivityInicio.ProviderType.BASIC)
                     } else {
                         showAlert(R.string.errorRegistro)
                     }
@@ -85,8 +86,7 @@ class ClientFragment : Fragment() {
         }
     return true
     }
-    private fun showHome(email:String, provider: ActivityInicioClient.ProviderType){
+    private fun showHome(email:String, provider: ActivityInicio.ProviderType){
 
     }
->>>>>>> Stashed changes
 }
