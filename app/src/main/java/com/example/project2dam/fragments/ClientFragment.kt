@@ -1,17 +1,17 @@
 package com.example.project2dam.fragments
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import com.example.project2dam.ActivityInicioClient
+import androidx.fragment.app.Fragment
+import com.example.project2dam.ActivityLogin
 import com.example.project2dam.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.fragment_client.*
 
 
@@ -34,10 +34,14 @@ class ClientFragment : Fragment() {
         //Funcion on click del boton de registro
         btnRegistrarClient.setOnClickListener {
             if (compForm()) {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(txtCorreo.text.toString(), txtPass.text.toString()).addOnCompleteListener {
-                    if(it.isSuccessful){
-                        saveBdd()
-                        showHome(it.result?.user?.email ?: "", ActivityInicioClient.ProviderType.BASIC)
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(
+                    txtCorreo.text.toString(),
+                    txtPass.text.toString()
+                ).addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        if (saveBdd()) {
+                            goToLoginView(txtCorreo.text.toString())
+                        }
                     } else {
                         showAlert(R.string.errorRegistro)
                     }
@@ -49,19 +53,22 @@ class ClientFragment : Fragment() {
     /*
     Funcion para crear una coleccion en la bdd con un documento por usuario, registrando los campos nombre, telefono, email y contraseña
      */
-    private fun saveBdd(){
-    db.collection("users").document(txtCorreo.text.toString()).set(
-        hashMapOf("Name" to txtModelo.text.toString(),
-        "Phone" to txtTelefono.text.toString(),
-        "Email" to txtCorreo.text.toString(),
-        "Password" to txtConfirmPass.text.toString())
-    )
+    private fun saveBdd(): Boolean {
+        db.collection("users").document(txtCorreo.text.toString()).set(
+            hashMapOf(
+                "Name" to txtModelo.text.toString(),
+                "Phone" to txtTelefono.text.toString(),
+                "Email" to txtCorreo.text.toString(),
+                "Password" to txtConfirmPass.text.toString()
+            )
+        )
+        return true
     }
 
     /*
     Funcion para lanzar alert en caso de fallo registrando al usuario
      */
-    private fun showAlert(msj: Int){
+    private fun showAlert(msj: Int) {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Error")
         builder.setMessage(msj)
@@ -70,23 +77,39 @@ class ClientFragment : Fragment() {
         dialog.show()
     }
 
-    private fun compForm():Boolean{
-        if(txtPass.text.toString() != txtConfirmPass.text.toString()){
+    /*
+    Funcion para comprobar los campos de nuestro formulario antes de crear el usuario
+     */
+    private fun compForm(): Boolean {
+        if (txtPass.text.toString() != txtConfirmPass.text.toString()) {
             showAlert(R.string.errorContrasenas)
-            Toast.makeText(context,txtPass.text.toString()+""+txtConfirmPass.text.toString(), Toast.LENGTH_LONG ).show()
+            Toast.makeText(
+                context,
+                txtPass.text.toString() + "" + txtConfirmPass.text.toString(),
+                Toast.LENGTH_LONG
+            ).show()
             return false
         }
-        if(txtModelo.text.isEmpty() || txtCorreo.text.isEmpty() || txtTelefono.text.isEmpty() ||  txtPass.text.isEmpty() || txtConfirmPass.text.isEmpty()){
+        if (txtModelo.text.isEmpty() || txtCorreo.text.isEmpty() || txtTelefono.text.isEmpty() || txtPass.text.isEmpty() || txtConfirmPass.text.isEmpty()) {
             showAlert(R.string.errorCampos)
             return false
         }
-        if(!checkBox2.isChecked){
+        if (!checkBox2.isChecked) {
             showAlert(R.string.errorTerminos)
             return false
         }
-    return true
+        return true
     }
-    private fun showHome(email:String, provider: ActivityInicioClient.ProviderType){
 
+    /*
+    Funcion que nos retorna al login, en caso de que el usuario se haya registrado correctamente, mandando por bundle el correo
+     */
+    private fun goToLoginView(email: String) {
+        val bundle = Bundle()
+        val intent = Intent(requireContext(), ActivityLogin::class.java).apply {
+            bundle.putString("email", txtCorreo.text.toString())
+        }
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }
