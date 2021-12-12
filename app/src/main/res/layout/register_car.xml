@@ -116,7 +116,7 @@
                 android:backgroundTint="@color/textBody"
                 android:ems="10"
                 android:hint="@string/Date"
-                android:inputType="number"
+                android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColorHint="@color/textBody" />
 
@@ -139,5 +139,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
