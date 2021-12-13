@@ -20,7 +20,12 @@ class ActivityInicioOwner : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio_owner)
-        replaceFragment(mapFragment)
+        val bundle = intent.extras
+        if (bundle?.getInt("garage") == 1) {
+            replaceFragment(listGarageFragment)
+        } else {
+            replaceFragment(mapFragment)
+        }
 
 
         bottom_navigation_owner.setOnNavigationItemSelectedListener {
