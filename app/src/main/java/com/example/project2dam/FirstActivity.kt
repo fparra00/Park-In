@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -27,12 +26,13 @@ class FirstActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //onClick Registro
         hrefCrearCuenta.setOnClickListener {
             val cambiarPantalla = Intent(this, ActivityRegister::class.java)
             startActivity(cambiarPantalla)
         }
 
-
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
 
         btnGoogle.setOnClickListener {
             val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -43,14 +43,8 @@ class FirstActivity : AppCompatActivity() {
             val googleClient = GoogleSignIn.getClient(this, googleConf)
             startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
         }
-
-
-        //onClick Google
-        btnGoogle.setOnClickListener {
-            val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(default_id)
-        }
     }
+
 
     fun pantallaLogin(view: View?) {
         val cambiarPantalla = Intent(this, ActivityLogin::class.java)
@@ -83,5 +77,3 @@ class FirstActivity : AppCompatActivity() {
         }
     }
 }
-
-
