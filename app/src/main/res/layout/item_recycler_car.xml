@@ -19,6 +19,7 @@
 
     <TextView
         android:id="@+id/txtMarcaCoche"
+        android:textColor="@color/textBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -28,6 +29,7 @@
 
     <TextView
         android:id="@+id/txtModeloCoche"
+        android:textColor="@color/textBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -37,6 +39,7 @@
 
     <TextView
         android:id="@+id/txtMatriculaCoche"
+        android:textColor="@color/textBody"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -47,7 +50,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/ic_remove"
+        android:id="@+id/ic_removeGarage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="20dp"

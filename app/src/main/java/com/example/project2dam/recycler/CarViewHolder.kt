@@ -11,5 +11,5 @@ class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val marcaCoche:TextView by lazy { itemView.findViewById(R.id.txtMarcaCoche) }
     val modeloCoche:TextView by lazy { itemView.findViewById(R.id.txtModeloCoche) }
     val matriculaCoche:TextView by lazy { itemView.findViewById(R.id.txtMatriculaCoche) }
-    val icRemove:ImageView by lazy { itemView.findViewById(R.id.ic_remove) }
+    val icRemove:ImageView by lazy { itemView.findViewById(R.id.ic_removeGarage) }
 }
