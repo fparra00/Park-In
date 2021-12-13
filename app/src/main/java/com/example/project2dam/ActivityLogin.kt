@@ -1,5 +1,6 @@
 package com.example.project2dam
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
@@ -25,9 +26,7 @@ class ActivityLogin : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
     }
-
 
     /*
     Funcion para recuperar el bundle, en caso de que, el usuario se registre de manera exitosa, se mostrara su correo y solo tendrá que introducir
@@ -39,6 +38,7 @@ class ActivityLogin : AppCompatActivity() {
         if (nom != null) {
             txtLogin.setText(nom)
         }
+
 
         //Funcion on click del boton de login
         btnIniciaSesion.setOnClickListener {
@@ -81,5 +81,8 @@ class ActivityLogin : AppCompatActivity() {
     fun pantallaInicio() {
         val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
         startActivity(cambiarPantalla)
+    }
+
+    fun googleLogin(){
     }
 }
