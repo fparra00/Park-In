@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Project2DAM</string>
     <!--Pantalla Inicial-->
-    <string name="btnCuentas">Inicia Sesion con Facebook</string>
+    <string name="btnCuentas">Inicia Sesion con Google</string>
     <string name="btnInicia">Inicia Sesión</string>
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
     <string name="registrate">REGISTRATE</string>
