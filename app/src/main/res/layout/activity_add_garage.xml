@@ -4,12 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:background="@drawable/bg_gradient"
-    tools:context=".ActivityAddCar">
-
-
+    tools:context=".ActivityAddGarage">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="379dp"
@@ -50,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:text="@string/registrarCoche"
+            android:text="@string/RegistrarGarage"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,62 +62,36 @@
             app:layout_constraintTop_toBottomOf="@+id/textView6">
 
             <EditText
-                android:id="@+id/txtMarca"
+                android:id="@+id/txtDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
                 android:ems="10"
                 android:textColor="@color/white"
-                android:hint="@string/Macra"
+                android:hint="@string/Direccion"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColorHint="@color/white" />
 
             <EditText
-                android:id="@+id/txtModelo"
+                android:id="@+id/txtNumeroPlazas"
                 android:textColor="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
                 android:ems="10"
-                android:hint="@string/modelo"
+                android:hint="@string/Nplazas"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColorHint="@color/white" />
 
             <EditText
-                android:id="@+id/txtMatricula"
+                android:id="@+id/txtCiudadGarage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
                 android:ems="10"
-                android:hint="@string/Matricula"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                />
-
-            <EditText
-                android:id="@+id/txtColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/Color"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                />
-
-            <EditText
-                android:id="@+id/txtDate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/Date"
+                android:hint="@string/Ciudad"
                 android:inputType="textPersonName"
                 android:minHeight="48dp"
                 android:textColorHint="@color/white"
@@ -134,11 +104,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/btnRegisterCar"
+        android:id="@+id/btnRegisterGarage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_bordes_redondos_transparente"
-        android:text="@string/RegistrarCoche"
+        android:text="@string/RegistrarGarage"
         android:textAllCaps="false"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

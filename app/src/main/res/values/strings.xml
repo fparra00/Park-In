@@ -24,6 +24,9 @@
     <string name="Macra">Marca</string>
     <string name="Color">Color</string>
     <string name="Date">Año</string>
+    <string name="Nplazas">NºPlazas</string>
+    <string name="Ciudad">Ciudad</string>
+    <string name="Direccion">Direccion</string>
     <string name="RegistrarCoche">Registrar Coche</string>
     <string name="errorRegistro">Se ha producido un error registrando al usuario, por favor, reinicie la app si el problema persiste</string>
     <string name="errorContrasenas">Las contraseñas deben de ser iguales, escribelas de nuevo, por favor</string>
@@ -31,11 +34,12 @@
     <string name="errorTerminos">Debes de aceptar nuestros terminos para poder registrarte!</string>
     <string name="errorInicio">Email o contraseña incorrectos! :(</string>
     <string name="login">LOGIN</string>
+    <string name="RegistrarGarage">Registrar Garaje</string>
+
     <string name="forg">¿Contraseña Olvidada?</string>
     <string name="errLog">Introduce unos credenciales validos, por favor!</string>
 
     <string name="prefs_file">com.example.project2dam.PREFS_FILE</string>
-
 
 
     <!-- TODO: Remove or change this placeholder text -->
