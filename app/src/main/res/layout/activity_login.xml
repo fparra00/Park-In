@@ -7,99 +7,142 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     tools:context=".ActivityLogin"
-    android:background="@drawable/background_blue"
+    android:background="@drawable/bg_gradient"
     >
 
 
     <LinearLayout
         android:id="@+id/layoutLogo"
-        android:layout_width="256dp"
-        android:layout_height="183dp"
+        android:layout_width="185dp"
+        android:layout_height="151dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.259">
+        app:layout_constraintVertical_bias="0.120000005">
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="246dp"
-            android:layout_height="168dp"
-            android:background="@drawable/logo_full_white" />
+            android:layout_width="188dp"
+            android:layout_height="125dp"
+            android:background="@drawable/logo_full_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/layoutBotones"
-        android:layout_width="318dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|center"
-        android:layout_marginBottom="150dp"
+        android:layout_weight="1"
+        android:background="@drawable/btn_bordes_redondos_transparente"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.923">
+        app:layout_constraintVertical_bias="0.59000003">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layoutBotones"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_gravity="center_vertical|center"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imgUser"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1.6"
-                tools:srcCompat="@drawable/ic_person" />
-
-            <EditText
-                android:id="@+id/txtLogin"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:hint="@string/correo"
-                android:ems="10"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="@string/correo"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/txtLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:drawableStart="@drawable/icon_email"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:paddingRight="16dp"
+                    android:textColor="@color/white"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-            <ImageView
-                android:id="@+id/imgLock"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1.6"
-                tools:srcCompat="@drawable/ic_lock" />
+            </LinearLayout>
 
-            <EditText
-                android:id="@+id/txtContrasena"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.4"
-                android:ems="10"
-                android:hint="@string/pass"
-                android:inputType="textPersonName"
-                tools:ignore="TouchTargetSizeCheck" />
-        </LinearLayout>
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/textVie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:text="@string/pass"
+                    android:textColor="@color/white"
+                    android:textSize="15dp" />
+
+                <EditText
+                    android:id="@+id/txtContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:drawableLeft="@drawable/ic_lock"
+                    android:drawableRight="@drawable/icon_eye"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white"
+                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/txtLog2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.4"
+                    android:gravity="right"
+                    android:text="@string/forg"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/white"
+                    android:textSize="13dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnIniciaSesion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="90dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="90dp"
+                android:background="@drawable/btn_bordes_redondos_transparente"
+                android:onClick="pantallaInicio"
+                android:text="@string/btnInicia"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
     </LinearLayout>
 
+<<<<<<< HEAD
     <Button
         android:id="@+id/btnIniciaSesion"
         android:layout_width="0dp"
@@ -114,5 +157,7 @@
         app:layout_constraintStart_toStartOf="@+id/layoutBotones"
         app:layout_constraintTop_toBottomOf="@+id/layoutBotones" />
 
+=======
+>>>>>>> main
 
 </androidx.constraintlayout.widget.ConstraintLayout>

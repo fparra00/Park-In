@@ -73,8 +73,8 @@ class ActivityLogin : AppCompatActivity() {
 
     //Funcion para limpiar el formulario
     private fun clearForm() {
-        txtLogin.setText(" ")
-        txtContrasena.setText(" ")
+        txtLogin.setText("")
+        txtContrasena.setText("")
     }
 
     //Funcion para cambiar a la pantalla de inicio
@@ -83,6 +83,5 @@ class ActivityLogin : AppCompatActivity() {
         startActivity(cambiarPantalla)
     }
 
-    fun googleLogin(){
-    }
+
 }

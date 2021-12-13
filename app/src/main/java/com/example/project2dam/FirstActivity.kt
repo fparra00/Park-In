@@ -6,29 +6,62 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+<<<<<<< HEAD
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+=======
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+>>>>>>> main
 import kotlinx.android.synthetic.main.activity_main.*
 
 class FirstActivity : AppCompatActivity() {
     private var btnIniciaFace: Button? = null
     private var btnIniciaSesion: Button? = null
     private var textView: TextView? = null
+    private var default_id: String =
+        "87382517071-dpil99tf34ufdjvkfip6ium6k84d0hqj.apps.googleusercontent.com"
+    private val GOOGLE_SIGN_IN = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+<<<<<<< HEAD
         //Guardado de datos
         val prefs =
             getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
         prefs.apply()
 
         //onClick crearCuenta
+=======
+        //onClick Registro
+>>>>>>> main
         hrefCrearCuenta.setOnClickListener {
             val cambiarPantalla = Intent(this, ActivityRegister::class.java)
             startActivity(cambiarPantalla)
         }
+<<<<<<< HEAD
+=======
+
+        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+
+        btnGoogle.setOnClickListener {
+            val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(default_id)
+                .requestEmail()
+                .build()
+
+            val googleClient = GoogleSignIn.getClient(this, googleConf)
+            startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
+        }
+    }
+>>>>>>> main
 
         //onClick Google
         btnGoogle.setOnClickListener {
@@ -41,5 +74,29 @@ class FirstActivity : AppCompatActivity() {
         startActivity(cambiarPantalla)
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
 
+        if (requestCode == GOOGLE_SIGN_IN) {
+            try {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+                val account = task.getResult(ApiException::class.java)
+
+                if (account != null) {
+                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                    FirebaseAuth.getInstance().signInWithCredential(credential)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
+                                startActivity(cambiarPantalla)
+                            }
+                        }
+                }
+            } catch (e: ApiException) {
+                val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
+                startActivity(cambiarPantalla)
+            }
+
+        }
+    }
 }
