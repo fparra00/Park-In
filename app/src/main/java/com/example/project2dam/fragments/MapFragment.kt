@@ -20,8 +20,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.project2dam.ActivityInicioClient
 import com.example.project2dam.R
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -63,14 +62,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
             val locationManager:LocationManager = requireContext().getSystemService(AppCompatActivity.LOCATION_SERVICE) as LocationManager
             if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                /*locationManager.requestLocationUpdates(
-                    LocationManager.GPS_PROVIDER,
-                    0L,
-                    0f,
-                    locationListener
 
-                )
-                 */
                 val malaga = LatLng(36.719444,-4.420000)
                 p0.moveCamera(CameraUpdateFactory.newLatLngZoom(malaga, 14.0f))
             } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {

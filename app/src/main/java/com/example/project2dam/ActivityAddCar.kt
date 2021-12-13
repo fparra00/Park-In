@@ -2,14 +2,12 @@ package com.example.project2dam
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.project2dam.fragments.CarFragment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import dev.sasikanth.colorsheet.ColorSheet
-import kotlinx.android.synthetic.main.fragment_client.*
 import kotlinx.android.synthetic.main.register_car.*
 
 class ActivityAddCar : AppCompatActivity() {
@@ -55,7 +53,6 @@ class ActivityAddCar : AppCompatActivity() {
 
             createCar()
 
-
             val bundle = Bundle()
             val intent = Intent(this, ActivityInicioClient::class.java).apply {
                 bundle.putInt("car", 1)
@@ -75,7 +72,7 @@ class ActivityAddCar : AppCompatActivity() {
 
         val messageRef = db
             .collection("users").document(user.toString())
-            .collection("cars").document(txtMatricula.text.toString())
+            .collection("cars").document("models")
 
             messageRef.set(
                 hashMapOf(
