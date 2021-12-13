@@ -104,19 +104,6 @@
                 />
 
             <EditText
-                android:id="@+id/txtColor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/white"
-                android:ems="10"
-                android:hint="@string/Color"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:textColorHint="@color/white"
-                android:textColor="@color/white"
-                />
-
-            <EditText
                 android:id="@+id/txtDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -128,6 +115,17 @@
                 android:textColorHint="@color/white"
                 android:textColor="@color/white"
                 />
+
+            <Button
+                android:id="@+id/btnColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bordes_redondos_fondo_blanco"
+                android:ems="10"
+                android:hint="@string/Color"
+                android:minHeight="48dp"
+                android:textColor="@color/textBody"
+                android:textColorHint="@color/textBody" />
 
 
         </LinearLayout>
@@ -146,4 +144,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
