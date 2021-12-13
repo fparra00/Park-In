@@ -30,6 +30,7 @@ import java.util.jar.Manifest
 
 class MapFragment : Fragment(), OnMapReadyCallback {
     private val PETICION_PERMISOS_GPS = 1
+    private var coordinates:Location? = null
 
 
     override fun onCreateView(
@@ -38,29 +39,29 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_map, container, false)
-        var mapF = map as SupportMapFragment
-        mapF.getMapAsync(this)}
+
+
+    }
+
 
 
     override fun onMapReady(p0: GoogleMap) {
         Toast.makeText(requireContext(), "hahaha", Toast.LENGTH_SHORT).show()
         val sydney = LatLng(36.7, -4.474)
-        p0.addMarker(
-            MarkerOptions()
-                .position(sydney)
-                .title("Marker in Sydney")
-        )
 
         p0.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val mapF = map as SupportMapFragment?
+        mapF?.getMapAsync(this)
         permisoGPS()
-
     }
+
+
+
+
 
     fun permisoGPS() {
         //Compruebo si tiene el permiso, si es así procedo a llamar
@@ -69,9 +70,20 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
             val locationManager:LocationManager = requireContext().getSystemService(AppCompatActivity.LOCATION_SERVICE) as LocationManager
             if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0L, 0f, locationListener)!!
+                locationManager.requestLocationUpdates(
+                    LocationManager.GPS_PROVIDER,
+                    0L,
+                    0f,
+                    locationListener
+                )
+
             } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0L, 0f, locationListener)!!
+                locationManager.requestLocationUpdates(
+                    LocationManager.NETWORK_PROVIDER,
+                    0L,
+                    0f,
+                    locationListener
+                )
             } else {
                 Toast.makeText(requireContext(),"0 idea de donde estas",Toast.LENGTH_SHORT).show()
             }
@@ -91,7 +103,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
-           // Toast.makeText(requireContext(),""+location.latitude + " : " + location.longitude,Toast.LENGTH_LONG).show()
+
         }
         override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
         override fun onProviderEnabled(provider: String) {}
@@ -107,9 +119,19 @@ class MapFragment : Fragment(), OnMapReadyCallback {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 val locationManager:LocationManager = requireContext().getSystemService(AppCompatActivity.LOCATION_SERVICE) as LocationManager
                 if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0L, 0f, locationListener)!!
+                    locationManager.requestLocationUpdates(
+                        LocationManager.GPS_PROVIDER,
+                        0L,
+                        0f,
+                        locationListener
+                    )
                 } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                    locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER,0L, 0f, locationListener)!!
+                    locationManager.requestLocationUpdates(
+                        LocationManager.NETWORK_PROVIDER,
+                        0L,
+                        0f,
+                        locationListener
+                    )
                 } else {
                     Toast.makeText(requireContext(),"0 idea de donde estas",Toast.LENGTH_SHORT).show()
                 }

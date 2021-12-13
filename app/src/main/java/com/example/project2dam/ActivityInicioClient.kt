@@ -10,6 +10,7 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -28,7 +29,6 @@ import kotlinx.android.synthetic.main.activity_inicio_client.*
 import kotlinx.android.synthetic.main.fragment_map.*
 
 class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
-    private val PETICION_PERMISOS_GPS = 1
     private val mapFragment = MapFragment()
     private val settingsFragment = SettingsFragment()
     private val carFragment = CarFragment()
@@ -47,15 +47,16 @@ class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
 
         bottom_navigation_client.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.ic_map -> {replaceFragment(mapFragment)
-                    var mapF = map as SupportMapFragment
-                    mapF.getMapAsync(this)}
+                R.id.ic_map ->{
+                    replaceFragment(mapFragment)
+                }
                 R.id.ic_settings -> replaceFragment(settingsFragment)
                 R.id.ic_car -> replaceFragment(carFragment)
             }
             true
         }
     }
+
 
 
     private fun replaceFragment(fragment: Fragment) {
