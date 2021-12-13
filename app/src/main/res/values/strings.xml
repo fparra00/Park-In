@@ -27,6 +27,7 @@
     <string name="errorContrasenas">Las contraseñas deben de ser iguales, escribelas de nuevo, por favor</string>
     <string name="errorCampos">Debes de rellenar todos los campos para poder registrarte</string>
     <string name="errorTerminos">Debes de aceptar nuestros terminos para poder registrarte!</string>
+    <string name="prefs_file">com.example.project2dam.PREFS_FILE</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
