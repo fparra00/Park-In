@@ -35,7 +35,6 @@
     <string name="errorInicio">Email o contraseña incorrectos! :(</string>
     <string name="login">LOGIN</string>
     <string name="RegistrarGarage">Registrar Garaje</string>
-
     <string name="forg">¿Contraseña Olvidada?</string>
     <string name="errLog">Introduce unos credenciales validos, por favor!</string>
 

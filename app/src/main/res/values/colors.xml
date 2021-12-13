@@ -13,6 +13,8 @@
     <color name="title">#010101</color>
 
     <array name="colors">
+        <item>#000</item>
+        <item>#FFF</item>
         <item>#F44336</item>
         <item>#E91E63</item>
         <item>#3F51B5</item>
@@ -20,6 +22,7 @@
         <item>#F4511E</item>
         <item>#546E7A</item>
         <item>#43A047</item>
+
     </array>
 
 </resources>

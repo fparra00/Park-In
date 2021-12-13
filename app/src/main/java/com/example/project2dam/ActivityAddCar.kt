@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.project2dam.fragments.CarFragment
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import dev.sasikanth.colorsheet.ColorSheet
 import kotlinx.android.synthetic.main.fragment_client.*
 import kotlinx.android.synthetic.main.register_car.*
@@ -16,7 +19,10 @@ class ActivityAddCar : AppCompatActivity() {
         private const val COLOR_SELECTED = "selectedColor"
         private const val NO_COLOR_OPTION = "noColorOption"
     }
+
     private val carFragment = CarFragment()
+    private val db = FirebaseFirestore.getInstance()
+    private var colorCar:String? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,15 +46,15 @@ class ActivityAddCar : AppCompatActivity() {
                     selectedColor = selectedColor,
                     listener = { color ->
                         selectedColor = color
-                        btnColor.setTextColor(selectedColor)
+                        colorCar = selectedColor.toString()
                     })
                 .show(supportFragmentManager)
-
-
-
         }
 
         btnRegisterCar.setOnClickListener {
+
+            createCar()
+
 
             val bundle = Bundle()
             val intent = Intent(this, ActivityInicioClient::class.java).apply {
@@ -58,6 +64,28 @@ class ActivityAddCar : AppCompatActivity() {
             startActivity(intent)
 
         }
+    }
+
+    /*
+    Funcion para crear un coche e introducirlo en BDD
+     */
+    public fun createCar(){
+        val user = Firebase.auth.currentUser?.email
+
+
+        val messageRef = db
+            .collection("users").document(user.toString())
+            .collection("cars").document(txtMatricula.text.toString())
+
+            messageRef.set(
+                hashMapOf(
+                    "Brand" to spMarcas.selectedItem,
+                    "Model" to txtModeloCar.text.toString(),
+                    "Matricula" to txtMatricula.text.toString(),
+                    "Date" to txtDateCar.text.toString(),
+                    "Color" to colorCar
+                )
+            )
     }
 
 
