@@ -134,7 +134,6 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="90dp"
                 android:background="@drawable/btn_bordes_redondos_transparente"
-                android:onClick="pantallaInicio"
                 android:text="@string/btnInicia"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
@@ -142,22 +141,5 @@
         </LinearLayout>
     </LinearLayout>
 
-<<<<<<< HEAD
-    <Button
-        android:id="@+id/btnIniciaSesion"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/btn_bordes_redondos_fondo_blanco"
-        android:text="@string/btnInicia"
-        android:textAllCaps="false"
-
-        android:textColor="@color/textBody"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/layoutBotones"
-        app:layout_constraintStart_toStartOf="@+id/layoutBotones"
-        app:layout_constraintTop_toBottomOf="@+id/layoutBotones" />
-
-=======
->>>>>>> main
 
 </androidx.constraintlayout.widget.ConstraintLayout>

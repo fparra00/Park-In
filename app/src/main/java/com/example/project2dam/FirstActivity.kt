@@ -6,10 +6,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-<<<<<<< HEAD
-import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-=======
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -17,7 +13,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
->>>>>>> main
 import kotlinx.android.synthetic.main.activity_main.*
 
 class FirstActivity : AppCompatActivity() {
@@ -32,24 +27,12 @@ class FirstActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-<<<<<<< HEAD
-        //Guardado de datos
-        val prefs =
-            getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE).edit()
-        prefs.apply()
-
-        //onClick crearCuenta
-=======
-        //onClick Registro
->>>>>>> main
         hrefCrearCuenta.setOnClickListener {
             val cambiarPantalla = Intent(this, ActivityRegister::class.java)
             startActivity(cambiarPantalla)
         }
-<<<<<<< HEAD
-=======
 
-        val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+
 
         btnGoogle.setOnClickListener {
             val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -60,12 +43,12 @@ class FirstActivity : AppCompatActivity() {
             val googleClient = GoogleSignIn.getClient(this, googleConf)
             startActivityForResult(googleClient.signInIntent, GOOGLE_SIGN_IN)
         }
-    }
->>>>>>> main
+
 
         //onClick Google
         btnGoogle.setOnClickListener {
-        val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id))
+            val googleConf = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(default_id)
         }
     }
 
@@ -100,3 +83,5 @@ class FirstActivity : AppCompatActivity() {
         }
     }
 }
+
+
