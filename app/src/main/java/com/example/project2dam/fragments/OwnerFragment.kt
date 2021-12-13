@@ -2,24 +2,15 @@ package com.example.project2dam.fragments
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import com.example.project2dam.ActivityLogin
 import com.example.project2dam.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.fragment_client.*
-import kotlinx.android.synthetic.main.fragment_client.btnRegistrarClient
-import kotlinx.android.synthetic.main.fragment_client.checkBox2
-import kotlinx.android.synthetic.main.fragment_client.txtConfirmPass
-import kotlinx.android.synthetic.main.fragment_client.txtCorreo
-import kotlinx.android.synthetic.main.fragment_client.txtModelo
-import kotlinx.android.synthetic.main.fragment_client.txtPass
-import kotlinx.android.synthetic.main.fragment_client.txtTelefono
 import kotlinx.android.synthetic.main.fragment_owner.*
 
 class OwnerFragment : Fragment() {
@@ -62,13 +53,16 @@ class OwnerFragment : Fragment() {
     Funcion para crear una coleccion en la bdd con un documento por usuario, registrando los campos nombre, telefono, email y contraseña
      */
     private fun saveBdd(): Boolean {
-        db.collection("usersOwners").document(txtEmpresa2.text.toString()).set(
+        db.collection("users").document(txtCorreo2.text.toString()).set(
+
             hashMapOf(
                 "Empresa" to txtEmpresa2.text.toString(),
                 "Name" to txtModelo2.text.toString(),
-                "Phone" to txtTelefono2.text.toString(),
+                "Phone" to spinnerOwner.selectedItem.toString()
+                        + " " + txtTelefono2.text.toString(),
                 "Email" to txtCorreo2.text.toString(),
-                "Password" to txtPass2.text.toString()
+                "Password" to txtPass2.text.toString(),
+                "Bussines" to true
             )
         )
         return true

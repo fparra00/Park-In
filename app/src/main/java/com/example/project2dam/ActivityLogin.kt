@@ -2,13 +2,17 @@ package com.example.project2dam
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
 
 
 class ActivityLogin : AppCompatActivity() {
+
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,7 +84,15 @@ class ActivityLogin : AppCompatActivity() {
 
     //Funcion para cambiar a la pantalla de inicio
     fun pantallaInicio() {
-        val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
-        startActivity(cambiarPantalla)
+        //Recuperamos si el usuario pertenece a un cliente o un owner, y mostramos el layout correspondiente
+        db.collection("users").document(txtLogin.text.toString()).get().addOnSuccessListener {
+            if (it.get("Bussines") as Boolean? == true) {
+                val cambiarPantalla = Intent(this, ActivityInicioOwner::class.java)
+                startActivity(cambiarPantalla)
+            } else {
+                val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
+                startActivity(cambiarPantalla)
+            }
+        }
     }
 }

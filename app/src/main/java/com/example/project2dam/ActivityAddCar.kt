@@ -37,7 +37,7 @@ class ActivityAddCar : AppCompatActivity() {
                     selectedColor = selectedColor,
                     listener = { color ->
                         selectedColor = color
-                        btnColor.setBackgroundColor(selectedColor)
+                        btnColor.setTextColor(selectedColor)
                     })
                 .show(supportFragmentManager)
         }

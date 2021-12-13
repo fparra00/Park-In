@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/correo"
-            android:inputType="textPersonName|textEmailAddress"
+            android:inputType="textEmailAddress"
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
 
@@ -80,14 +80,14 @@
                 tools:context=".FirstActivity">
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinnerOwner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
+                    android:dropDownSelector="@drawable/drop"
                     android:entries="@array/prefijos"
-                    android:dropDownSelector="@drawable/drop" />
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white" />
 
             </RelativeLayout>
 
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="@string/telefono"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
