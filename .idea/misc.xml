@@ -27,15 +27,12 @@
         <entry key="..\:/Carpetas Windows/Documentos/GitHub/Project2DAM/app/src/main/res/layout/spinner_list.xml" value="0.3278985507246377" />
         <entry key="..\:/Carpetas Windows/Documentos/GitHub/Project2DAM/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Carpetas Windows/Documentos/GitHub/Project2DAM/app/src/main/res/menu/menu_registro.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/drawable/ic_car.xml" value="0.2703125" />
-        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout-land/fragment_car.xml" value="0.11614583333333334" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/activity_inicio.xml" value="0.2259963768115942" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/fragment_car.xml" value="0.20244565217391305" />
-        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/fragment_client.xml" value="0.19655797101449277" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/fragment_list_garage.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/fragment_map.xml" value="0.15489130434782608" />
-        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/item_recycler_car.xml" value="0.264" />
-        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/item_recycler_garage.xml" value="0.264" />
+        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/item_recycler_car.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/item_recycler_garage.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/layout/register_car.xml" value="0.264" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Pablo/Documents/GitHub/Park-In/app/src/main/res/menu/menu_registro.xml" value="0.25416666666666665" />
@@ -44,7 +41,22 @@
         <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/drawable/btn_bordes_redondos_fondo_blanco.xml" value="0.3828125" />
         <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/drawable/btn_bordes_redondos_transparente.xml" value="0.3828125" />
         <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout-land/activity_inicio_client.xml" value="0.17504409171075838" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout-land/activity_login.xml" value="0.17504409171075838" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout-land/activity_main.xml" value="0.17504409171075838" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout-land/register_car.xml" value="0.17504409171075838" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/activity_inicio_client.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/activity_login.xml" value="0.3079710144927536" />
         <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/activity_register.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/fragment_client.xml" value="0.25" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/item_recycler_car.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/item_recycler_garage.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/register_car.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/registro_coche.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/layout/spinner_list.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/mipmap-anydpi-v26/ic_google_icon.xml" value="0.22291666666666668" />
+        <entry key="..\:/Users/whysxpvrrv/AndroidStudioProjects/Project2DAM/app/src/main/res/mipmap-anydpi-v26/ic_google_icon_round.xml" value="0.22291666666666668" />
       </map>
     </option>
   </component>

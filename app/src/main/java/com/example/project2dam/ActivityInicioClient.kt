@@ -34,7 +34,8 @@ class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
     private val carFragment = CarFragment()
 
     enum class ProviderType {
-        BASIC
+        BASIC,
+        GOOGLE
     }
 
 

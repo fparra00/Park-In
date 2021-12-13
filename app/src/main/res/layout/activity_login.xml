@@ -134,8 +134,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="90dp"
                 android:background="@drawable/btn_bordes_redondos_transparente"
-                android:onClick="pantallaInicio"
-                android:text="@string/btnInicia"
+                android:text="@string/login"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
 

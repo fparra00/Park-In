@@ -2,7 +2,9 @@
     <string name="app_name">Project2DAM</string>
     <!--Pantalla Inicial-->
     <string name="btnCuentas">Inicia Sesion con Google</string>
-    <string name="btnInicia">LOGIN</string>
+
+    <string name="btnInicia">Inicia Sesión</string>
+
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
     <string name="registrate">REGISTRATE</string>
     <string name="nombreCompleto">Nombre completo</string>
@@ -27,11 +29,13 @@
     <string name="errorContrasenas">Las contraseñas deben de ser iguales, escribelas de nuevo, por favor</string>
     <string name="errorCampos">Debes de rellenar todos los campos para poder registrarte</string>
     <string name="errorTerminos">Debes de aceptar nuestros terminos para poder registrarte!</string>
+    <string name="errorInicio">Email o contraseña incorrectos! :(</string>
     <string name="login">LOGIN</string>
-    <string name="forg">Forgot Password?</string>
-
+    <string name="forg">¿Contraseña Olvidada?</string>
+    <string name="errLog">Introduce unos credenciales validos, por favor!</string>
 
     <string name="prefs_file">com.example.project2dam.PREFS_FILE</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->
