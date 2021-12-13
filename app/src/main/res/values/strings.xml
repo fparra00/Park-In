@@ -1,17 +1,10 @@
 <resources>
     <string name="app_name">Project2DAM</string>
     <!--Pantalla Inicial-->
-    <string name="btnCuentas">Inicia Sesion con Facebook</string>
-    <string name="btnInicia">Inicia Sesión</string>
+    <string name="btnCuentas">Inicia Sesion con Google</string>
+    <string name="btnInicia">LOGIN</string>
     <string name="refCrear">¿No tienes cuenta? <b> Crea una aquí! :)</b></string>
     <string name="registrate">REGISTRATE</string>
-    <!--Pantalla Registro coche-->
-    <string name="registraCoche"> Registra tu coche </string>
-    <string name="modelo">Modelo</string>
-    <string name="año">Año</string>
-    <string name="color">Color</string>
-    <string name="matricula">Matrícula</string>
-    <!--Pantalla Registro -->
     <string name="nombreCompleto">Nombre completo</string>
     <string name="nombreEmpresa">Nombre empresa</string>
     <string name="correo">Correo electrónico</string>
@@ -22,7 +15,26 @@
     <string name="verMas"><u>Haz click aquí para ver más</u></string>
     <string name="bienvenido">Bienvenido</string>
     <string name="registraEmpresa">Registrate para continuar como Empresa</string>
-    <string name="addcoche">Añadir coche</string>
+    <string name="registraCliente">Registrate para continuar como Cliente</string>
+    <string name="registrarCoche">Registra tu coche para continuar </string>
+    <string name="modelo">Modelo</string>
+    <string name="Matricula">Matricula</string>
+    <string name="Macra">Marca</string>
+    <string name="Color">Color</string>
+    <string name="Date">Año</string>
+    <string name="RegistrarCoche">Registrar Coche</string>
+    <string name="errorRegistro">Se ha producido un error registrando al usuario, por favor, reinicie la app si el problema persiste</string>
+    <string name="errorContrasenas">Las contraseñas deben de ser iguales, escribelas de nuevo, por favor</string>
+    <string name="errorCampos">Debes de rellenar todos los campos para poder registrarte</string>
+    <string name="errorTerminos">Debes de aceptar nuestros terminos para poder registrarte!</string>
+    <string name="login">LOGIN</string>
+    <string name="forg">Forgot Password?</string>
 
+
+    <string name="prefs_file">com.example.project2dam.PREFS_FILE</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

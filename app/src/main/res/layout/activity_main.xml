@@ -55,25 +55,28 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/btn_bordes_redondos_transparente"
+            android:background="@drawable/btn_bordes_redondos_fondo_blanco"
+            android:drawableStart="@drawable/googleg_standard_color_18"
+            android:onClick="pantallaLogin"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
             android:text="@string/btnCuentas"
             android:textAllCaps="false"
-            android:onClick="noDisponibleAun"
-            />
+            android:textColor="@color/textBody" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnIniciaSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="15dp"
-            android:background="@drawable/btn_bordes_redondos_fondo_blanco"
+            android:background="@drawable/btn_bordes_redondos_transparente"
+            android:onClick="pantallaLogin"
             android:text="@string/btnInicia"
             android:textAllCaps="false"
-            android:onClick="noDisponibleAun"
 
-            android:textColor="@color/textBody" />
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/hrefCrearCuenta"
@@ -81,9 +84,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:gravity="center"
-            android:onClick="noDisponibleAun"
             android:text="@string/refCrear"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
 
