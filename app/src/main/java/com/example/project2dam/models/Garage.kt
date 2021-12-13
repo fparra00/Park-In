@@ -1,4 +1,4 @@
 package com.example.project2dam.models
 
-class Garage {
+class Garage (){
 }
