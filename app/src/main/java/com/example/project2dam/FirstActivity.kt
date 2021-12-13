@@ -2,14 +2,12 @@ package com.example.project2dam
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.*
-import androidx.fragment.app.Fragment
-import com.example.project2dam.fragments.CarFragment
-import com.example.project2dam.fragments.MapFragment
-import com.example.project2dam.fragments.SettingsFragment
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -21,8 +19,9 @@ class FirstActivity : AppCompatActivity() {
     private var btnIniciaFace: Button? = null
     private var btnIniciaSesion: Button? = null
     private var textView: TextView? = null
-    private var default_id:String = "87382517071-dpil99tf34ufdjvkfip6ium6k84d0hqj.apps.googleusercontent.com"
-    private val GOOGLE_SIGN_IN=100
+    private var default_id: String =
+        "87382517071-dpil99tf34ufdjvkfip6ium6k84d0hqj.apps.googleusercontent.com"
+    private val GOOGLE_SIGN_IN = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,17 +55,26 @@ class FirstActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == GOOGLE_SIGN_IN){
-            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            val account = task.getResult(ApiException::class.java)
-            if(account != null){
-                val credential = GoogleAuthProvider.getCredential(account.idToken, null)
-                FirebaseAuth.getInstance().signInWithCredential(credential)
+        if (requestCode == GOOGLE_SIGN_IN) {
+            try {
+                val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+                val account = task.getResult(ApiException::class.java)
+
+                if (account != null) {
+                    val credential = GoogleAuthProvider.getCredential(account.idToken, null)
+                    FirebaseAuth.getInstance().signInWithCredential(credential)
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
+                                startActivity(cambiarPantalla)
+                            }
+                        }
+                }
+            } catch (e: ApiException) {
                 val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
                 startActivity(cambiarPantalla)
             }
+
         }
     }
-
-
 }
