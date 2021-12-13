@@ -65,6 +65,7 @@ class ClientFragment : Fragment() {
         return true
     }
 
+
     /*
     Funcion para lanzar alert en caso de fallo registrando al usuario
      */
