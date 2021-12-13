@@ -63,12 +63,14 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
             val locationManager:LocationManager = requireContext().getSystemService(AppCompatActivity.LOCATION_SERVICE) as LocationManager
             if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                locationManager.requestLocationUpdates(
+                /*locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
                     0L,
                     0f,
                     locationListener
+
                 )
+                 */
                 val malaga = LatLng(36.719444,-4.420000)
                 p0.moveCamera(CameraUpdateFactory.newLatLngZoom(malaga, 14.0f))
             } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
@@ -112,8 +114,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
-            Toast.makeText(requireContext(), ""+location.latitude, Toast.LENGTH_SHORT).show()
-            coordinates=location
         }
         override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
         override fun onProviderEnabled(provider: String) {}

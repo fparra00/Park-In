@@ -43,12 +43,17 @@ class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio_client)
-        replaceFragment(mapFragment)
+        val bundle = intent.extras
+        if (bundle?.getInt("car") == 1) {
+            replaceFragment(carFragment)
+        } else {
+            replaceFragment(mapFragment)
+        }
 
 
         bottom_navigation_client.setOnNavigationItemSelectedListener {
             when (it.itemId) {
-                R.id.ic_map ->{
+                R.id.ic_map -> {
                     replaceFragment(mapFragment)
                 }
                 R.id.ic_settings -> replaceFragment(settingsFragment)
@@ -57,7 +62,6 @@ class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
             true
         }
     }
-
 
 
     private fun replaceFragment(fragment: Fragment) {
