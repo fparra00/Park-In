@@ -10,15 +10,11 @@ import kotlinx.android.synthetic.main.activity_login.*
 
 class ActivityLogin : AppCompatActivity() {
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        //Funcion para llevar a cabo todas las acciones del login
         setup()
-    }
-
-    override fun onStart() {
-        super.onStart()
     }
 
     /*
@@ -36,12 +32,11 @@ class ActivityLogin : AppCompatActivity() {
         //Funcion on click del boton de login
         btnIniciaSesion.setOnClickListener {
             //Comprobacion de Login
-            if (compForm()){
+            if (compForm()) {
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(
                     txtLogin.text.toString(),
                     txtContrasena.text.toString()
                 ).addOnCompleteListener {
-
                     if (it.isSuccessful) {
                         pantallaInicio()
                     } else {
@@ -50,7 +45,6 @@ class ActivityLogin : AppCompatActivity() {
                     }
                 }
             }
-
         }
     }
 
@@ -67,15 +61,16 @@ class ActivityLogin : AppCompatActivity() {
         dialog.show()
     }
 
+    /*
+    Funcion para comprobar los campos del formulario
+     */
     private fun compForm(): Boolean {
-        if(txtLogin.text==null || txtLogin.text.length==0 || txtContrasena.text==null || txtContrasena.text.length==0 ){
+        if (txtLogin.text == null || txtLogin.text.length == 0 || txtContrasena.text == null || txtContrasena.text.length == 0) {
             showAlert(R.string.errLog)
-
             return false
         }
         return true
     }
-
 
     //Funcion para limpiar el formulario
     private fun clearForm() {
@@ -88,6 +83,4 @@ class ActivityLogin : AppCompatActivity() {
         val cambiarPantalla = Intent(this, ActivityInicioClient::class.java)
         startActivity(cambiarPantalla)
     }
-
-
 }

@@ -54,7 +54,7 @@ class ClientFragment : Fragment() {
     Funcion para crear una coleccion en la bdd con un documento por usuario, registrando los campos nombre, telefono, email y contraseña
      */
     private fun saveBdd(): Boolean {
-        db.collection("users").document(txtCorreo.text.toString()).set(
+        db.collection("usersClient").document(txtCorreo.text.toString()).set(
             hashMapOf(
                 "Name" to txtModelo.text.toString(),
                 "Phone" to txtTelefono.text.toString(),
