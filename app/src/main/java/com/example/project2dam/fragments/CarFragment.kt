@@ -1,11 +1,14 @@
 package com.example.project2dam.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.project2dam.ActivityAddCar
+import com.example.project2dam.ActivityInicioClient
 import com.example.project2dam.R
 import com.example.project2dam.models.Coche
 import com.example.project2dam.recycler.AdapterCar
@@ -29,9 +32,18 @@ class CarFragment : Fragment() {
 
         var adapter: AdapterCar = AdapterCar(this, coches)
 
+        btnIrRegistroCoche.setOnClickListener{
+            val cambiarPantalla = Intent(context, ActivityAddCar::class.java)
+            startActivity(cambiarPantalla)
+        }
+
         recyclerListaCoches.adapter=adapter
         recyclerListaCoches.layoutManager=LinearLayoutManager(context)
 
     }
+
+
+
+
 
 }
