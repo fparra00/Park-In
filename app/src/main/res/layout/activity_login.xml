@@ -69,7 +69,7 @@
                 android:layout_weight="0.4"
                 android:hint="@string/correo"
                 android:ems="10"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>
@@ -94,7 +94,7 @@
                 android:layout_weight="0.4"
                 android:ems="10"
                 android:hint="@string/pass"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
 
