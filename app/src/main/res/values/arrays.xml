@@ -8,4 +8,30 @@
         <item>+32</item>
     </string-array>
 
+    <string-array name="marcas">
+        <item>Peugot</item>
+        <item>Renault</item>
+        <item>Skoda</item>
+        <item>Suzuki</item>
+        <item>Toyota</item>
+        <item>Mercedes Benz</item>
+        <item>Audi</item>
+        <item>BMW</item>
+        <item>Seat</item>
+        <item>Ferrari</item>
+        <item>Lamborghinni</item>
+        <item>Tesla</item>
+        <item>Infinity</item>
+        <item>Subaru</item>
+        <item>Honda</item>
+        <item>Fiat</item>
+        <item>Alfa Romeo</item>
+        <item>Benley</item>
+        <item>Land Rover</item>
+        <item>Jaguar</item>
+        <item>Lexus</item>
+        <item>Wolchszawen</item>
+        <item>Volvo</item>
+    </string-array>
+
 </resources>
