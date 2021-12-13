@@ -18,20 +18,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getSystemService
+import com.example.project2dam.ActivityInicioClient
 import com.example.project2dam.R
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_map.*
 import java.util.jar.Manifest
 
 class MapFragment : Fragment(), OnMapReadyCallback {
     private val PETICION_PERMISOS_GPS = 1
-    private var coordinates:Location? = null
-
+    private var coordinates:Location = Location("location")
+    //variables para location
+    private lateinit var  mMap: GoogleMap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,39 +49,30 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
 
-
-    override fun onMapReady(p0: GoogleMap) {
-        Toast.makeText(requireContext(), "hahaha", Toast.LENGTH_SHORT).show()
-        val sydney = LatLng(36.7, -4.474)
-
-        p0.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val mapF = map as SupportMapFragment?
+        val mapF = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapF?.getMapAsync(this)
-        permisoGPS()
+
+
     }
 
-
-
-
-
-    fun permisoGPS() {
-        //Compruebo si tiene el permiso, si es así procedo a llamar
+    override fun onMapReady(p0: GoogleMap) {
         if ((ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) &&
             (ActivityCompat.checkSelfPermission(requireContext(), android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED ) ) {
 
             val locationManager:LocationManager = requireContext().getSystemService(AppCompatActivity.LOCATION_SERVICE) as LocationManager
             if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
-                locationManager.requestLocationUpdates(
+                /*locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
                     0L,
                     0f,
                     locationListener
-                )
 
+                )
+                 */
+                val malaga = LatLng(36.719444,-4.420000)
+                p0.moveCamera(CameraUpdateFactory.newLatLngZoom(malaga, 14.0f))
             } else if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
                 locationManager.requestLocationUpdates(
                     LocationManager.NETWORK_PROVIDER,
@@ -84,6 +80,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                     0f,
                     locationListener
                 )
+                val malaga = LatLng(36.719444,-4.420000)
+                p0.moveCamera(CameraUpdateFactory.newLatLng(malaga))
             } else {
                 Toast.makeText(requireContext(),"0 idea de donde estas",Toast.LENGTH_SHORT).show()
             }
@@ -100,10 +98,22 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 android.Manifest.permission.ACCESS_COARSE_LOCATION,
                 android.Manifest.permission.ACCESS_FINE_LOCATION),PETICION_PERMISOS_GPS)
         }
+
+        //añadir marcador
+
+
+    }
+
+
+
+
+    fun permisoGPS() {
+        //Compruebo si tiene el permiso, si es así procedo a llamar
+
+
     }
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
-
         }
         override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
         override fun onProviderEnabled(provider: String) {}
