@@ -31,8 +31,11 @@
     <string name="errorTerminos">Debes de aceptar nuestros terminos para poder registrarte!</string>
     <string name="errorInicio">Email o contraseña incorrectos! :(</string>
     <string name="login">LOGIN</string>
-    <string name="forg">Forgot Password?</string>
+    <string name="forg">¿Contraseña Olvidada?</string>
+    <string name="errLog">Introduce unos credenciales validos, por favor!</string>
+
     <string name="prefs_file">com.example.project2dam.PREFS_FILE</string>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->

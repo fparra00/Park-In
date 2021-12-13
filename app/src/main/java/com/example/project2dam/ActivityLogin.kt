@@ -1,19 +1,11 @@
 package com.example.project2dam
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.btnIniciaSesion
-import kotlinx.android.synthetic.main.activity_main.*
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-
-
 
 
 class ActivityLogin : AppCompatActivity() {
@@ -44,17 +36,21 @@ class ActivityLogin : AppCompatActivity() {
         //Funcion on click del boton de login
         btnIniciaSesion.setOnClickListener {
             //Comprobacion de Login
-            FirebaseAuth.getInstance().signInWithEmailAndPassword(
-                txtLogin.text.toString(),
-                txtContrasena.text.toString()
-            ).addOnCompleteListener {
-                if (it.isSuccessful) {
-                    pantallaInicio()
-                } else {
-                    showAlert(R.string.errorInicio)
-                    clearForm()
+            if (compForm()){
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                    txtLogin.text.toString(),
+                    txtContrasena.text.toString()
+                ).addOnCompleteListener {
+
+                    if (it.isSuccessful) {
+                        pantallaInicio()
+                    } else {
+                        showAlert(R.string.errorInicio)
+                        clearForm()
+                    }
                 }
             }
+
         }
     }
 
@@ -69,6 +65,15 @@ class ActivityLogin : AppCompatActivity() {
         builder.setPositiveButton("Reintentar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
+    }
+
+    private fun compForm(): Boolean {
+        if(txtLogin.text==null || txtLogin.text.length==0 || txtContrasena.text==null || txtContrasena.text.length==0 ){
+            showAlert(R.string.errLog)
+
+            return false
+        }
+        return true
     }
 
 
