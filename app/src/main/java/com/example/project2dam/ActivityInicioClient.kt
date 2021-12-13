@@ -15,7 +15,8 @@ class ActivityInicioClient : AppCompatActivity() {
     private val carFragment= CarFragment()
 
     enum class ProviderType{
-        BASIC
+        BASIC,
+        GOOGLE
     }
 
 
