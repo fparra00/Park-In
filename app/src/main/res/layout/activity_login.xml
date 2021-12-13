@@ -78,7 +78,7 @@
                     android:drawableStart="@drawable/icon_email"
                     android:drawablePadding="10dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textEmailAddress"
                     android:paddingRight="16dp"
                     android:textColor="@color/white"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
@@ -110,7 +110,7 @@
                     android:drawableRight="@drawable/icon_eye"
                     android:drawablePadding="10dp"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textPassword"
                     android:textColor="@color/white"
                     tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
