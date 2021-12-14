@@ -8,6 +8,7 @@ import com.example.project2dam.fragments.ListGarageFragment
 import com.example.project2dam.fragments.MapFragment
 import com.example.project2dam.fragments.SettingsFragment
 import kotlinx.android.synthetic.main.activity_inicio_owner.*
+import kotlinx.android.synthetic.main.fragment_map.*
 
 class ActivityInicioOwner : AppCompatActivity(){
 

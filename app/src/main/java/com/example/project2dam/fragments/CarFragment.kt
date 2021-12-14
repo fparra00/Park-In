@@ -47,11 +47,6 @@ class CarFragment : Fragment() {
 
     private fun obtCars() {
         val user = Firebase.auth.currentUser?.email
-        val marca: String? = null
-        val modelo: String? = null
-        val matricula: String? = null
-        val ano: String? = null
-        val color: String? = null
 
 
         carArrayList = arrayListOf<Coche>()
@@ -62,7 +57,6 @@ class CarFragment : Fragment() {
                 for (document in result) {
                     var car: Coche = Coche()
                     car.Brand = document.data.getValue("Brand").toString()
-                    Toast.makeText(context, document.data.getValue("Brand").toString(), Toast.LENGTH_LONG).show()
                     car.Model = document.data.getValue("Model").toString()
                     car.Matricula = document.data.getValue("Matricula").toString()
                     carArrayList.add(car)
@@ -71,8 +65,6 @@ class CarFragment : Fragment() {
                 recyclerListaCoches.adapter = adapter
                 recyclerListaCoches.layoutManager = LinearLayoutManager(context)
             }
-
-
 
     }
 
