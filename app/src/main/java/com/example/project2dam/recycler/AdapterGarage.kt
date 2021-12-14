@@ -10,11 +10,17 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
+/**
+ * Clase adapter que recibe el holder y el arrayGarage
+ */
 class AdapterGarage(val contexto: FragmentActivity, val garages:ArrayList<Garage>) : RecyclerView.Adapter<GarageViewHolder>()  {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GarageViewHolder {
         return GarageViewHolder(contexto.layoutInflater.inflate(R.layout.item_recycler_garage,parent,false))
     }
-
+    /**
+     * Funcion sobreescrita que lo que infla en los campos correspondientes los valores obtenido de el array
+     *
+     */
     override fun onBindViewHolder(holder: GarageViewHolder, position: Int) {
         holder.direccionGarage.text = garages[position].Address.toString()+"  "
         holder.ciudadGarage.text = garages[position].City.toString()
@@ -26,7 +32,9 @@ class AdapterGarage(val contexto: FragmentActivity, val garages:ArrayList<Garage
             this.notifyDataSetChanged()
         }
     }
-
+    /**
+     * Funcion que devuelve el tamaño de garages
+     */
     override fun getItemCount(): Int {
         return garages.size
         }

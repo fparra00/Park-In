@@ -20,9 +20,11 @@ class ActivityAddCar : AppCompatActivity() {
 
     private val carFragment = CarFragment()
     private val db = FirebaseFirestore.getInstance()
-    private var colorCar:String? = null
+    private var colorCar: String? = null
 
-
+    /**
+     * Funcion on create de la actividad AddCar
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         var selectedColor: Int = ColorSheet.NO_COLOR
         var noColorOption = false
@@ -31,11 +33,16 @@ class ActivityAddCar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.register_car)
 
-        //Funcion para Picker de Color
+        /**
+         * Funcion para Picker de Color
+         */
         selectedColor = savedInstanceState?.getInt(COLOR_SELECTED) ?: colors.first()
         noColorOption = savedInstanceState?.getBoolean(NO_COLOR_OPTION) ?: false
 
-        //onClick de picker de color
+        /**
+         * onClick de picker de color
+         * para recoger el color seleccionado
+         */
         btnColor.setOnClickListener {
             ColorSheet().cornerRadius(8)
                 .colorPicker(
@@ -49,6 +56,10 @@ class ActivityAddCar : AppCompatActivity() {
                 .show(supportFragmentManager)
         }
 
+        /**
+         * Funcion onclick del boton registrar para cambiar de actividad y pasar por bundle un identificador
+         * para depsues navegar al fragment
+         */
         btnRegisterCar.setOnClickListener {
 
             createCar()
@@ -63,10 +74,10 @@ class ActivityAddCar : AppCompatActivity() {
         }
     }
 
-    /*
-    Funcion para crear un coche e introducirlo en BDD
+    /**
+     * Funcion para crear un coche e introducirlo en BDD
      */
-    fun createCar(){
+    fun createCar() {
         val user = Firebase.auth.currentUser?.email
 
 
@@ -74,15 +85,15 @@ class ActivityAddCar : AppCompatActivity() {
             .collection("users").document(user.toString())
             .collection("cars").document(txtMatricula.text.toString())
 
-            messageRef.set(
-                hashMapOf(
-                    "Brand" to spMarcas.selectedItem,
-                    "Model" to txtModeloCar.text.toString(),
-                    "Matricula" to txtMatricula.text.toString(),
-                    "Date" to txtDateCar.text.toString(),
-                    "Color" to colorCar
-                )
+        messageRef.set(
+            hashMapOf(
+                "Brand" to spMarcas.selectedItem,
+                "Model" to txtModeloCar.text.toString(),
+                "Matricula" to txtMatricula.text.toString(),
+                "Date" to txtDateCar.text.toString(),
+                "Color" to colorCar
             )
+        )
     }
 
 

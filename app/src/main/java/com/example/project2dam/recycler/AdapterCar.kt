@@ -21,12 +21,18 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
-
+/**
+ * Clase adapter que recibe el holder y el arraycoches
+ */
 class AdapterCar(val contexto: FragmentActivity, val coches:ArrayList<Coche>) : RecyclerView.Adapter<CarViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
         return CarViewHolder(contexto.layoutInflater.inflate(R.layout.item_recycler_car, parent, false))
     }
 
+    /**
+     * Funcion sobreescrita que lo que infla en los campos correspondientes los valores obtenido de el array
+     *
+     */
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
         holder.marcaCoche.text = coches[position].Brand.toString()+"   "
         holder.modeloCoche.text = coches[position].Model.toString()
@@ -39,7 +45,9 @@ class AdapterCar(val contexto: FragmentActivity, val coches:ArrayList<Coche>) : 
             }
         }
 
-
+    /**
+     * Funcion que devuelve el tamaño de coches
+     */
     override fun getItemCount(): Int {
         return coches.size
     }

@@ -6,6 +6,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project2dam.R
 
+/**
+ * View Holder de car con todos los campos necesarios para el adapter
+ */
 class CarViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     val marcaCoche:TextView by lazy { itemView.findViewById(R.id.txtMarcaCoche) }
