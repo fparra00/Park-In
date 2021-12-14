@@ -39,10 +39,12 @@ class ActivityAddGarage : AppCompatActivity() {
     public fun createGaraje() {
         val user = Firebase.auth.currentUser?.email
 
+        //Accedemos y creamos el garaje con el identificador direccion
         val messageRef = db
             .collection("users").document(user.toString())
             .collection("garages").document(txtDireccion.text.toString())
 
+        //Introducimos los datos en la tabla
         messageRef.set(
             hashMapOf(
                 "Address" to txtDireccion.text.toString(),

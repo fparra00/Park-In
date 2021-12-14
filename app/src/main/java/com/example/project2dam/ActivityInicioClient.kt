@@ -31,10 +31,12 @@ import kotlinx.android.synthetic.main.activity_inicio_client.*
 import kotlinx.android.synthetic.main.fragment_map.*
 
 class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
+    //Fragmentos
     private val mapFragment = MapFragment()
     private val settingsFragment = SettingsFragment()
     private val carFragment = CarFragment()
 
+    //Tipos de proveedores de inicio de sesion
     enum class ProviderType {
         BASIC,
         GOOGLE
@@ -71,7 +73,6 @@ class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragmentContainerClient, fragment)
             transaction.commit()
-
         }
 
     }
