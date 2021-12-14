@@ -35,6 +35,7 @@ class AdapterCar(val contexto: FragmentActivity, val coches:ArrayList<Coche>) : 
             FirebaseFirestore.getInstance().collection("users").document(Firebase.auth.currentUser?.email.toString())
                 .collection("cars").document(coches[position].Matricula.toString()).delete()
                 coches.removeAt(position)
+                this.notifyDataSetChanged()
             }
         }
 

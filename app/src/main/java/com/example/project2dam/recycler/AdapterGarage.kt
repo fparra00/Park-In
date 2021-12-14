@@ -23,6 +23,7 @@ class AdapterGarage(val contexto: FragmentActivity, val garages:ArrayList<Garage
             FirebaseFirestore.getInstance().collection("users").document(Firebase.auth.currentUser?.email.toString())
                 .collection("garages").document(garages[position].Address.toString()).delete()
             garages.removeAt(position)
+            this.notifyDataSetChanged()
         }
     }
 
