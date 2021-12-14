@@ -20,28 +20,40 @@ import kotlinx.android.synthetic.main.fragment_list_garage.*
 
 class ListGarageFragment : Fragment() {
 
+    //Variables auxiliares
     private val db = FirebaseFirestore.getInstance()
     private lateinit var garageArrayList: ArrayList<Garage>
 
+    /**
+     * Funcion on create que instancia el fragmento lista de garages
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Infla el layout en este fragemnto
         return inflater.inflate(R.layout.fragment_list_garage, container, false)
     }
 
+    /**
+     * Funcion que inicializa el fragment
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         obtGarages()
 
+        //Funcion onCLick del boton registro garage
         btnIrRegistroGaraje.setOnClickListener {
             val cambiarPantalla = Intent(context, ActivityAddGarage::class.java)
             startActivity(cambiarPantalla)
         }
 
     }
+
+    /**
+     * Funcion que obtiene todos los garajes del usuario registrado y los añade a un recycler view
+     */
     private fun obtGarages() {
         val user = Firebase.auth.currentUser?.email
 

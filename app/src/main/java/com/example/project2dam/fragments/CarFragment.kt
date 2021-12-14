@@ -20,23 +20,30 @@ import kotlinx.android.synthetic.main.fragment_car.*
 
 
 class CarFragment : Fragment() {
-
+    //Variables auxiliares
     private val db = FirebaseFirestore.getInstance()
     private lateinit var carArrayList: ArrayList<Coche>
 
+    /**
+    *Funcion on create que instancia el fragmento car
+    */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
+        // Infla el layout en este fragmento
         return inflater.inflate(R.layout.fragment_car, container, false)
     }
 
+    /**
+     * Funcion que inicializa el fragment
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         obtCars()
 
+        //Funcion onClick del boton registro coche
         btnIrRegistroCoche.setOnClickListener {
             val cambiarPantalla = Intent(context, ActivityAddCar::class.java)
             startActivity(cambiarPantalla)
@@ -45,6 +52,9 @@ class CarFragment : Fragment() {
 
     }
 
+    /**
+     * Funcion que obtiene todos los garajes del usuario registrado y los añade a un recycler view
+     */
     private fun obtCars() {
         val user = Firebase.auth.currentUser?.email
 

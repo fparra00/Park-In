@@ -10,11 +10,14 @@ import com.example.project2dam.R
 
 class SettingsFragment : Fragment() {
 
+    /**
+     * Funcion on create que instancia el fragmento lista de ajustes
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
+        // Infla el layout en este fragmento
         return inflater.inflate(R.layout.fragment_settings, container, false)
     }
 

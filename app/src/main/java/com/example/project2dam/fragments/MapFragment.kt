@@ -22,31 +22,38 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapFragment : Fragment(), OnMapReadyCallback {
+
+    //Variables auxiliares
     private val PETICION_PERMISOS_GPS = 1
     private var coordinates: Location = Location("location")
-
-    //variables para location
     private lateinit var mMap: GoogleMap
 
+
+    /**
+     * Funcion on create que instancia el fragmento lista de mapa
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
+        // Infla el layout de este fragmento
         return inflater.inflate(R.layout.fragment_map, container, false)
 
 
     }
 
-
+    /**
+     * Funcion que inicializa el fragment
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val mapF = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapF?.getMapAsync(this)
-
-
     }
 
+    /**
+     * Funcion que se ejecuta al inicializarse el mapa
+     */
     override fun onMapReady(p0: GoogleMap) {
         if ((ActivityCompat.checkSelfPermission(
                 requireContext(),
@@ -82,8 +89,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                 Toast.makeText(requireContext(), "0 idea de donde estas", Toast.LENGTH_SHORT).show()
             }
         } else {
-            //Este segundo if es para comprobar si en caso de haber pedido los permisos y le ha dado a No volver a preguntar, mandarle un mensaje
-            //Diciendo que el permiso no esta activado
             if (!(ActivityCompat.shouldShowRequestPermissionRationale(
                     requireActivity(),
                     android.Manifest.permission.ACCESS_COARSE_LOCATION
@@ -108,18 +113,12 @@ class MapFragment : Fragment(), OnMapReadyCallback {
             )
         }
 
-        //añadir marcador
-
-
     }
 
 
-    fun permisoGPS() {
-        //Compruebo si tiene el permiso, si es así procedo a llamar
-
-
-    }
-
+    /**
+     * Funciones asincronas que devuelven distintos datos sobre la localizacion
+     */
     private val locationListener: LocationListener = object : LocationListener {
         override fun onLocationChanged(location: Location) {
         }
@@ -130,6 +129,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
 
+    /**
+     * Funcion que se ejecuta cuando el usuario no ha aceptado permisos aún o los ha revocado
+     */
     @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(
         requestCode: Int,

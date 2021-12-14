@@ -15,18 +15,25 @@ import kotlinx.android.synthetic.main.fragment_owner.*
 
 class OwnerFragment : Fragment() {
 
+    //Variables auxiliares
     private val db = FirebaseFirestore.getInstance()
 
 
+    /**
+     * Funcion on create que instancia el fragmento lista de owner
+     */
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // Inflate the layout for this fragment
+        // Infla el layout en este fragemnto
         return inflater.inflate(R.layout.fragment_owner, container, false)
 
     }
 
+    /**
+     * Funcion que inicializa el fragment
+     */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,8 +56,8 @@ class OwnerFragment : Fragment() {
         }
     }
 
-    /*
-    Funcion para crear una coleccion en la bdd con un documento por usuario, registrando los campos nombre, telefono, email y contraseña
+    /**
+     *Funcion para crear una coleccion en la bdd con un documento por usuario, registrando los campos nombre, telefono, email y contraseña
      */
     private fun saveBdd(): Boolean {
         db.collection("users").document(txtCorreo2.text.toString()).set(
@@ -68,8 +75,8 @@ class OwnerFragment : Fragment() {
         return true
     }
 
-    /*
-    Funcion para lanzar alert en caso de fallo registrando al usuario
+    /**
+     *Funcion para lanzar alert en caso de fallo registrando al usuario
      */
     private fun showAlert(msj: Int) {
         val builder = AlertDialog.Builder(requireContext())
@@ -80,8 +87,8 @@ class OwnerFragment : Fragment() {
         dialog.show()
     }
 
-    /*
-    Funcion para comprobar los campos de nuestro formulario antes de crear el usuario
+    /**
+     *Funcion para comprobar los campos de nuestro formulario antes de crear el usuario
      */
     private fun compForm(): Boolean {
         if (txtPass2.text.toString() != txtConfirmPass2.text.toString()) {
@@ -100,8 +107,8 @@ class OwnerFragment : Fragment() {
         return true
     }
 
-    /*
-    Funcion que nos retorna al login, en caso de que el usuario se haya registrado correctamente, mandando por bundle el correo
+    /**
+     *Funcion que nos retorna al login, en caso de que el usuario se haya registrado correctamente, mandando por bundle el correo
      */
     private fun goToLoginView(email: String) {
         val bundle = Bundle()
