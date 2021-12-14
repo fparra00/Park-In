@@ -49,7 +49,7 @@ class ActivityInicioClient : AppCompatActivity(), OnMapReadyCallback {
         if (bundle?.getInt("car") == 1) {
             replaceFragment(carFragment)
         } else {
-            replaceFragment(carFragment)
+            replaceFragment(mapFragment)
         }
 
 

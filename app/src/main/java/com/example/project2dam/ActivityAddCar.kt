@@ -66,13 +66,13 @@ class ActivityAddCar : AppCompatActivity() {
     /*
     Funcion para crear un coche e introducirlo en BDD
      */
-    public fun createCar(){
+    fun createCar(){
         val user = Firebase.auth.currentUser?.email
 
 
         val messageRef = db
             .collection("users").document(user.toString())
-            .collection("cars").document("models")
+            .collection("cars").document(txtMatricula.text.toString())
 
             messageRef.set(
                 hashMapOf(
